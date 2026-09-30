@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#090b10" />
   <title>Guru | Developer & Creator</title>
-  <meta name="description" content="Personal developer portfolio for Guru — web development, JavaScript, bots, AI projects, games and APO." />
+  <meta name="description" content="Guru's developer portfolio — websites, JavaScript, Discord bots, AI projects, Roblox systems and APO." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,69 +13,205 @@
 </head>
 <body>
   <div class="noise"></div>
+
   <header class="nav">
-    <a class="brand" href="#top"><span class="brand-mark">A</span><span>GURU</span></a>
+    <a class="brand" href="#top" aria-label="Guru home">
+      <img class="brand-logo" src="apo-logo.png" alt="APO logo" />
+      <span>GURU</span>
+    </a>
+
     <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
     <nav id="navLinks">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#owned">What I Own</a><a href="#contact" class="nav-cta">Contact</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#owned">What I Own</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Open appearance settings">◐</button>
     </nav>
   </header>
 
+  <aside class="theme-panel" id="themePanel" aria-hidden="true">
+    <div class="theme-panel-head">
+      <div>
+        <small>SETTINGS</small>
+        <h3>Appearance</h3>
+      </div>
+      <button id="themeClose" class="icon-btn" aria-label="Close settings">×</button>
+    </div>
+    <p>Choose how the website looks on this device.</p>
+    <div class="theme-options">
+      <button class="theme-option" data-theme="dark"><span>🌙</span><b>Dark</b><small>Original dark theme</small></button>
+      <button class="theme-option" data-theme="light"><span>☀️</span><b>Light</b><small>Bright clean theme</small></button>
+    </div>
+  </aside>
+  <div class="panel-overlay" id="panelOverlay"></div>
+
   <main id="top">
     <section class="hero">
-      <div class="hero-glow glow-one"></div><div class="hero-glow glow-two"></div>
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+
       <div class="hero-copy reveal">
         <p class="eyebrow">DEVELOPER • CREATOR • BUILDER</p>
         <h1>I build things that<br><span>actually feel alive.</span></h1>
-        <p class="hero-text">I'm Guru — a developer building websites, JavaScript projects, Discord bots, AI tools, Roblox systems and the APO ecosystem.</p>
-        <div class="hero-actions"><a href="#projects" class="btn primary">View my work</a><a href="#about" class="btn ghost">About me</a></div>
+        <p class="hero-text">
+          I'm Guru — a developer building websites, JavaScript projects,
+          Discord bots, AI tools, Roblox systems and the APO ecosystem.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn primary">View my work</a>
+          <a href="#contact" class="btn ghost">Contact me</a>
+        </div>
+
         <div class="mini-stats">
-          <div><strong>HTML</strong><span>Frontend</span></div><div><strong>JavaScript</strong><span>Logic & apps</span></div><div><strong>Python</strong><span>Bots & tools</span></div><div><strong>Lua</strong><span>Roblox systems</span></div>
+          <button class="mini-stat explainable" data-title="HTML" data-explain="HTML gives a website its structure — sections, buttons, text, forms, navigation and everything the browser places on the page."><strong>HTML</strong><span>Frontend</span></button>
+          <button class="mini-stat explainable" data-title="JavaScript" data-explain="JavaScript adds the logic and interaction: buttons, menus, chat systems, API requests, animations, settings and dynamic features."><strong>JavaScript</strong><span>Logic & apps</span></button>
+          <button class="mini-stat explainable" data-title="Python" data-explain="I use Python for Discord bots, automation, APIs and backend-style logic."><strong>Python</strong><span>Bots & tools</span></button>
+          <button class="mini-stat explainable" data-title="Lua" data-explain="Lua is the language I use for Roblox gameplay systems such as combat, movement, teams, weapons and admin features."><strong>Lua</strong><span>Roblox systems</span></button>
         </div>
       </div>
-      <div class="hero-card reveal">
-        <div class="pfp-wrap"><img src="pfp.jpg" alt="Guru profile picture" /><span class="status-dot"></span></div>
-        <div class="profile-copy"><h2>Guru</h2><p>Founder / Developer</p><span class="status">● building something</span></div>
+
+      <div class="hero-card reveal explainable" data-title="My profile" data-explain="This is my main profile picture. I use it across my projects and communities as part of my online identity.">
+        <div class="pfp-wrap">
+          <img src="pfp.jpg" alt="Guru profile picture" />
+          <span class="status-dot"></span>
+        </div>
+        <div class="profile-copy">
+          <h2>Guru</h2>
+          <p>Founder / Developer</p>
+          <span class="status">● building something</span>
+        </div>
       </div>
     </section>
 
     <section class="section" id="about">
-      <div class="section-heading reveal"><span>01 / ABOUT</span><h2>More than just code.</h2></div>
+      <div class="section-heading reveal">
+        <span>01 / ABOUT</span>
+        <h2>More than just code.</h2>
+      </div>
+
       <div class="about-grid">
-        <article class="glass-card reveal"><h3>Who I am</h3><p>I like turning ideas into real projects — from websites and AI tools to Discord bots and game systems. I care about making things look clean, feel fast and actually work.</p></article>
-        <article class="glass-card reveal"><h3>What I work with</h3><p>HTML, CSS, JavaScript, Python, Roblox Lua, Firebase, GitHub, Cloudflare, APIs and automation. I keep learning new tools whenever a project needs them.</p></article>
+        <article class="glass-card reveal explainable" data-title="Who I am" data-explain="I like turning ideas into real projects and learning whatever technology a project needs. I care about both how things work and how they feel to use.">
+          <h3>Who I am</h3>
+          <p>I turn ideas into real projects — from websites and AI tools to Discord bots and game systems. I care about making things look clean, feel fast and actually work.</p>
+        </article>
+
+        <article class="glass-card reveal explainable" data-title="My development stack" data-explain="My stack includes frontend web development, Python, Roblox Lua, Firebase, GitHub, Cloudflare and external APIs. I use different tools depending on what I am building.">
+          <h3>What I work with</h3>
+          <p>HTML, CSS, JavaScript, Python, Roblox Lua, Firebase, GitHub, Cloudflare, APIs and automation. I keep learning new tools whenever a project needs them.</p>
+        </article>
       </div>
     </section>
 
     <section class="section" id="skills">
-      <div class="section-heading reveal"><span>02 / SKILLS</span><h2>My stack.</h2></div>
+      <div class="section-heading reveal">
+        <span>02 / SKILLS</span>
+        <h2>My stack.</h2>
+      </div>
+
       <div class="skill-grid">
-        <div class="skill reveal"><b>HTML5</b><small>Structure & interfaces</small></div><div class="skill reveal"><b>CSS3</b><small>Responsive UI & effects</small></div><div class="skill reveal"><b>JavaScript</b><small>Interactive web apps</small></div><div class="skill reveal"><b>Python</b><small>Discord bots & backend logic</small></div><div class="skill reveal"><b>Lua</b><small>Roblox gameplay systems</small></div><div class="skill reveal"><b>Firebase</b><small>Auth & app data</small></div><div class="skill reveal"><b>GitHub</b><small>Projects & deployment</small></div><div class="skill reveal"><b>APIs</b><small>AI & external services</small></div>
+        <button class="skill reveal explainable" data-title="HTML5" data-explain="HTML is the structure of a webpage. I use it to build layouts, navigation, forms, buttons, cards and semantic page sections."><b>HTML5</b><small>Structure & interfaces</small></button>
+        <button class="skill reveal explainable" data-title="CSS3" data-explain="CSS controls design and layout. I use it for responsive pages, dark themes, animations, gradients, spacing and mobile-friendly interfaces."><b>CSS3</b><small>Responsive UI & effects</small></button>
+        <button class="skill reveal explainable" data-title="JavaScript" data-explain="JavaScript powers interactivity. I use it for menus, chat features, theme settings, buttons, APIs, authentication flows and app logic."><b>JavaScript</b><small>Interactive web apps</small></button>
+        <button class="skill reveal explainable" data-title="Python" data-explain="Python is one of my main bot and automation languages. My Discord projects use it for commands, moderation, music systems and AI features."><b>Python</b><small>Discord bots & backend logic</small></button>
+        <button class="skill reveal explainable" data-title="Roblox Lua" data-explain="I use Roblox Lua to create combat systems, movement, animations, teams, tools, admin commands and other game mechanics."><b>Lua</b><small>Roblox gameplay systems</small></button>
+        <button class="skill reveal explainable" data-title="Firebase" data-explain="Firebase helps me build account systems and app features such as authentication and cloud-backed web functionality."><b>Firebase</b><small>Auth & app data</small></button>
+        <button class="skill reveal explainable" data-title="GitHub" data-explain="I use GitHub to store project code, manage repositories and publish static websites with GitHub Pages."><b>GitHub</b><small>Projects & deployment</small></button>
+        <button class="skill reveal explainable" data-title="APIs" data-explain="APIs let my projects connect to external services, AI providers and other platforms without putting all functionality inside one app."><b>APIs</b><small>AI & external services</small></button>
       </div>
     </section>
 
     <section class="section" id="projects">
-      <div class="section-heading reveal"><span>03 / PROJECTS</span><h2>Things I've built.</h2></div>
+      <div class="section-heading reveal">
+        <span>03 / PROJECTS</span>
+        <h2>Things I've built.</h2>
+      </div>
+
       <div class="projects-grid">
-        <article class="project featured reveal"><div class="project-top"><span class="project-number">01</span><span class="project-tag">AI / WEB</span></div><h3>APO AI</h3><p>A custom AI chat experience with account authentication, chat history, multiple modes, attachments, voice features and a dedicated backend.</p><div class="chips"><span>JavaScript</span><span>Firebase</span><span>Cloudflare</span><span>AI API</span></div></article>
-        <article class="project reveal"><div class="project-top"><span class="project-number">02</span><span class="project-tag">DISCORD</span></div><h3>APO Bots</h3><p>A set of Discord bots for moderation, music and AI with slash commands and custom server tools.</p><div class="chips"><span>Python</span><span>discord.py</span><span>APIs</span></div></article>
-        <article class="project reveal"><div class="project-top"><span class="project-number">03</span><span class="project-tag">ROBLOX</span></div><h3>Game Systems</h3><p>Custom combat, movement, teams, animations, weapons, admin systems and gameplay mechanics for Roblox projects.</p><div class="chips"><span>Lua</span><span>Roblox Studio</span></div></article>
-        <article class="project reveal"><div class="project-top"><span class="project-number">04</span><span class="project-tag">SOCIAL WEB</span></div><h3>APO Website</h3><p>A social-style web project with accounts, friends, groups, media, profiles, messaging and moderation features.</p><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span></div></article>
+        <article class="project featured reveal explainable" data-title="APO AI" data-explain="APO AI is my custom AI chat website project. It includes accounts, chat history, modes, attachments, voice features and a separate backend connection for AI requests.">
+          <div class="project-top"><span class="project-number">01</span><span class="project-tag">AI / WEB</span></div>
+          <h3>APO AI</h3>
+          <p>A custom AI chat experience with account authentication, chat history, multiple modes, attachments, voice features and a dedicated backend.</p>
+          <div class="chips"><span>JavaScript</span><span>Firebase</span><span>Cloudflare</span><span>AI API</span></div>
+        </article>
+
+        <article class="project reveal explainable" data-title="APO Bots" data-explain="My Discord bot projects include APO.ADMIN for moderation and server tools, APO.MUSIC for music commands, and APO.GPT for AI-style features.">
+          <div class="project-top"><span class="project-number">02</span><span class="project-tag">DISCORD</span></div>
+          <h3>APO Bots</h3>
+          <p>A set of Discord bots for moderation, music and AI with slash commands and custom server tools.</p>
+          <div class="chips"><span>Python</span><span>discord.py</span><span>APIs</span></div>
+        </article>
+
+        <article class="project reveal explainable" data-title="Roblox Game Systems" data-explain="I build custom Roblox systems including combat, movement, teams, animations, weapons, admin commands and other gameplay mechanics.">
+          <div class="project-top"><span class="project-number">03</span><span class="project-tag">ROBLOX</span></div>
+          <h3>Game Systems</h3>
+          <p>Custom combat, movement, teams, animations, weapons, admin systems and gameplay mechanics for Roblox projects.</p>
+          <div class="chips"><span>Lua</span><span>Roblox Studio</span></div>
+        </article>
+
+        <article class="project reveal explainable" data-title="APO Website" data-explain="The APO website is a social-style web project with accounts, profiles, friends, groups, media sharing, messaging and moderation features.">
+          <div class="project-top"><span class="project-number">04</span><span class="project-tag">SOCIAL WEB</span></div>
+          <h3>APO Website</h3>
+          <p>A social-style web project with accounts, friends, groups, media, profiles, messaging and moderation features.</p>
+          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span></div>
+        </article>
       </div>
     </section>
 
     <section class="section" id="owned">
-      <div class="section-heading reveal"><span>04 / OWNED & CREATED</span><h2>The APO ecosystem.</h2></div>
+      <div class="section-heading reveal">
+        <span>04 / OWNED & CREATED</span>
+        <h2>The APO ecosystem.</h2>
+      </div>
+
       <div class="owned-panel reveal">
-        <div class="owned-title"><div class="apo-logo">APO</div><div><h3>APO</h3><p>My growing collection of projects, bots and digital tools.</p></div></div>
-        <div class="owned-list"><div><span>APO AI</span><small>AI web app</small></div><div><span>APO.ADMIN</span><small>Discord moderation bot</small></div><div><span>APO.MUSIC</span><small>Discord music bot</small></div><div><span>APO.GPT</span><small>Discord AI bot</small></div><div><span>APO Website</span><small>Social web project</small></div></div>
+        <div class="owned-title">
+          <img class="owned-logo" src="apo-logo.png" alt="APO logo" />
+          <div><h3>APO</h3><p>My growing collection of projects, bots and digital tools.</p></div>
+        </div>
+
+        <div class="owned-list">
+          <button class="explainable" data-title="APO AI" data-explain="My AI web application project with authentication, chat UI, multiple modes and backend API work."><span>APO AI</span><small>AI web app</small></button>
+          <button class="explainable" data-title="APO.ADMIN" data-explain="My Discord administration and moderation bot, built around slash commands and server management tools."><span>APO.ADMIN</span><small>Discord moderation bot</small></button>
+          <button class="explainable" data-title="APO.MUSIC" data-explain="My Discord music bot with music-related slash commands and playback features."><span>APO.MUSIC</span><small>Discord music bot</small></button>
+          <button class="explainable" data-title="APO.GPT" data-explain="My Discord AI bot project for AI-style responses and chat features."><span>APO.GPT</span><small>Discord AI bot</small></button>
+          <button class="explainable" data-title="APO Website" data-explain="My social web project with user accounts, profiles, messaging, groups, media and community features."><span>APO Website</span><small>Social web project</small></button>
+        </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact"><div class="contact-card reveal"><p class="eyebrow">LET'S BUILD</p><h2>Got an idea?</h2><p>I'm always building, testing and improving something new.</p><a href="https://github.com/apo-official" target="_blank" rel="noopener" class="btn primary">GitHub profile</a></div></section>
+    <section class="section contact" id="contact">
+      <div class="contact-card reveal">
+        <p class="eyebrow">CONTACT</p>
+        <h2>Let's talk.</h2>
+        <p>For projects, questions or APO-related contact, reach me here.</p>
+        <div class="contact-actions">
+          <a href="mailto:guruapo129contact@gmail.com" class="btn primary">Email me</a>
+          <button class="btn ghost" id="discordCopy" type="button">Discord: guru_guru123s</button>
+          <a href="https://github.com/apo-official" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
+        </div>
+        <small class="copy-note" id="copyNote" aria-live="polite"></small>
+      </div>
+    </section>
   </main>
 
-  <footer><span>© <span id="year"></span> Guru / APO</span><span>Built with HTML, CSS & JavaScript</span></footer>
+  <footer>
+    <span>© <span id="year"></span> Guru / APO</span>
+    <span>Built with HTML, CSS & JavaScript</span>
+  </footer>
+
+  <div class="info-modal" id="infoModal" aria-hidden="true">
+    <div class="info-card">
+      <button id="infoClose" class="icon-btn info-close" aria-label="Close explanation">×</button>
+      <span class="modal-kicker">WHAT THIS IS</span>
+      <h3 id="infoTitle">Explanation</h3>
+      <p id="infoText"></p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
