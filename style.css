@@ -235,3 +235,85 @@ button:focus-visible,
   background: rgba(255,255,255,.18);
   color: inherit;
 }
+
+
+/* ===== FINAL: no blue state on clickable cards/buttons ===== */
+.explainable,
+.skill,
+.project,
+.glass-card,
+.mini-stat,
+.owned-list button,
+.hero-card,
+.btn,
+.theme-btn,
+.theme-option,
+.icon-btn,
+.menu-btn {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.explainable:hover,
+.skill:hover,
+.project:hover,
+.glass-card:hover,
+.mini-stat:hover,
+.owned-list button:hover,
+.hero-card:hover {
+  border-color: var(--line-strong) !important;
+  box-shadow: none !important;
+}
+
+.explainable:focus,
+.explainable:focus-visible,
+.explainable:active,
+.skill:focus,
+.skill:focus-visible,
+.skill:active,
+.project:focus,
+.project:focus-visible,
+.project:active,
+.glass-card:focus,
+.glass-card:focus-visible,
+.glass-card:active,
+.mini-stat:focus,
+.mini-stat:focus-visible,
+.mini-stat:active,
+.owned-list button:focus,
+.owned-list button:focus-visible,
+.owned-list button:active,
+.hero-card:focus,
+.hero-card:focus-visible,
+.hero-card:active,
+.btn:focus,
+.btn:focus-visible,
+.btn:active,
+.theme-btn:focus,
+.theme-btn:focus-visible,
+.theme-btn:active,
+.icon-btn:focus,
+.icon-btn:focus-visible,
+.icon-btn:active,
+.menu-btn:focus,
+.menu-btn:focus-visible,
+.menu-btn:active {
+  outline: none !important;
+  border-color: var(--line-strong) !important;
+  box-shadow: none !important;
+  background-color: inherit;
+}
+
+/* Theme choice can be selected without turning blue */
+.theme-option.active,
+.theme-option:focus,
+.theme-option:focus-visible,
+.theme-option:active {
+  border-color: var(--line-strong) !important;
+  box-shadow: none !important;
+}
+
+/* Keep click feedback purely motion-based, never blue */
+.click-pop {
+  box-shadow: none !important;
+  outline: none !important;
+}
