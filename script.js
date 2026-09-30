@@ -100,3 +100,14 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+// Smooth click feedback without blue tap flashes
+document.querySelectorAll('.explainable, .skill, .project, .mini-stat, .owned-list button, .hero-card, .btn').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.remove('click-pop');
+    void el.offsetWidth;
+    el.classList.add('click-pop');
+    setTimeout(() => el.classList.remove('click-pop'), 320);
+  });
+});
